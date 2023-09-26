@@ -1,0 +1,42 @@
+<div class="data-table__container">
+  <table class="data-table__table">
+    <caption class="data-table__caption">Data Table Based on Mocked Data</caption>
+    <thead class="data-table__thead">
+      <tr>
+        <th class="data-table__th">ID</th>
+        <th class="data-table__th">Int</th>
+        <th class="data-table__th">Float</th>
+        <th class="data-table__th">Color</th>
+        <th class="data-table__th">Child</th>
+      </tr>
+    </thead>
+    <tbody class="data-table__tbody">
+      <tr *ngFor="let item of itemsToRender" class="data-table__tbody--row">
+        <td class="data-table__td">{{item.id}}</td>
+        <td class="data-table__td">{{item.int}}</td>
+        <td class="data-table__td">{{item.float}}</td>
+        <td class="data-table__td">
+          <span class="data-table__color-cell" [style.backgroundColor]="item.color"> {{item.color}}</span>
+        </td>
+        <td class="data-table__td">
+          <table class="data-table__child-table">
+            <thead class="data-table__child-thead">
+              <tr>
+                <th class="data-table__child-table-id">ID</th>
+                <th class="data-table__th">Color</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="data-table__td">{{item.child.id}}</td>
+                <td class="data-table__td">
+                  <span class="data-table__color-cell" [style.backgroundColor]="item.child.color"> {{item.child.color}}</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+/* Reset some default browser styles */
+
+html {
+  height: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a background color */
+body {
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+
+.form-field-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  .form-field {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+

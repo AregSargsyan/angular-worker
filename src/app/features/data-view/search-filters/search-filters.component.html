@@ -1,0 +1,26 @@
+<form [formGroup]="searchForm" class="form-field-group">
+  <div class="form-field">
+    <label for="timer">Timer, ms</label>
+    <input type="number" formControlName="timer" id="timer" />
+
+    <ng-container *ngIf="timerControl.invalid && (timerControl.dirty || timerControl.touched)">
+      <app-error *ngIf="timerControl.hasError('min')">Minimum Timer should be {{timerControl.getError('min').min}}</app-error>
+      <app-error *ngIf="timerControl.hasError('required')">Timer is required</app-error>
+    </ng-container>
+  </div>
+
+  <div class="form-field">
+    <label for="arraySize">Array Size</label>
+    <input type="number" formControlName="arraySize" id="arraySize" />
+
+    <ng-container *ngIf="arraySizeControl.invalid && (arraySizeControl.dirty || arraySizeControl.touched)">
+      <app-error *ngIf="arraySizeControl.hasError('min')">Minimum Size should be {{arraySizeControl.getError('min').min}}</app-error>
+      <app-error *ngIf="arraySizeControl.hasError('required')">Minimum is required</app-error>
+    </ng-container>
+  </div>
+
+  <div class="form-field">
+    <label for="ids">Additional IDs</label>
+    <input formControlName="ids" id="ids" />
+  </div>
+</form>

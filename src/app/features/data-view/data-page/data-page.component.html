@@ -1,0 +1,7 @@
+<div class="container">
+  <app-search-filters [searchParams]="searchParams"
+                      (searchData)="searchParamsChanged($event)"
+                      (stopSearchingData)="stopSearchingData()">
+  </app-search-filters>
+  <app-data-table [mockedData]="mockedData" [ids]="ids"></app-data-table>
+</div>
